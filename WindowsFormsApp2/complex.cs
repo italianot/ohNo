@@ -8,79 +8,88 @@ namespace WindowsFormsApp2
 {
     public class Complex
     {
-        private double value;
+        private double real;
+        private double image;
 
-        public Complex(double value)
+        public Complex(double real, double image)
         {
-            this.value = value;
+            this.real = real;
+            this.image = image;
         }
 
         public string Verbose()
         {
-            return String.Format("{0}", this.value);
+            return String.Format("{0} {1}", this.real, this.image);
         }
 
         //СЛОЖЕНИЕ
-        public static Complex operator +(Complex instance, double number)
+        /*public static Complex operator +(Complex instance, double number)
         {
-            return new Complex(instance.value + number);
+            return new Complex(instance.real + number);
         }
         public static Complex operator +(double number, Complex instance)
         {
             return instance + number;
-        }
+        }*/
 
-        public static Complex operator +(Complex instance, Complex Instance)// ЭТО ПРАВИЛЬНО?
+        public static Complex operator +(Complex A, Complex B)
         {
-            return new Complex(instance.value + Instance.value);
+            return new Complex(A.real + B.real, A.image +  B.image);
         }
 
         //УМНОЖЕНИЕ
-        public static Complex operator *(Complex instance, double number)
+        /*public static Complex operator *(Complex instance, double number)
         {
-            return new Complex(instance.value * number); 
+            return new Complex(instance.real * number); 
         }
 
         public static Complex operator *(double number, Complex instance)
         {
             return instance * number;
+        }*/
+
+        public static Complex operator *(Complex A, Complex B)
+        {
+            return new Complex(A.real * B.real, A.image * B.image);
         }
 
-        public static Complex operator *(Complex instance, Complex Instance)// ЭТО ПРАВИЛЬНО?
-        {
-            return new Complex(instance.value * Instance.value);
-        }
+
+
+
+
+
+
 
         //ВЫЧИТАНИЕ
-        public static Complex operator -(Complex instance, double number)
+        /*public static Complex operator -(Complex instance, double number)
         {
-            return new Complex(instance.value - number); 
+            return new Complex(instance.real - number); 
         }
 
         public static Complex operator -(double number, Complex instance)
         {
             return instance - number;
-        }
+        }*/
 
-        public static Complex operator -(Complex instance, Complex Instance)// ЭТО ПРАВИЛЬНО?
+        public static Complex operator -(Complex A, Complex B)
         {
-            return new Complex(instance.value - Instance.value);
+            return new Complex(A.real - B.real, A.image - B.image);
         }
 
         //ДЕЛЕНИЕ
-        public static Complex operator /(Complex instance, double number)
+        /*public static Complex operator /(Complex instance, double number)
         {
-            return new Complex(instance.value / number); 
+            return new Complex(instance.real / number); 
         }
 
         public static Complex operator /(double number, Complex instance)
         {
             return instance / number;
-        }
+        }*/
 
-        public static Complex operator /(Complex instance, Complex Instance)// ЭТО ПРАВИЛЬНО?
+        public static Complex operator /(Complex A, Complex B)
         {
-            return new Complex(instance.value / Instance.value);
+            return new Complex(A.real / B.real, A.image / B.image);
         }
     }
 }

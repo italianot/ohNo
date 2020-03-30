@@ -26,39 +26,39 @@ namespace WindowsFormsApp2
                 var thirdValue = double.Parse(txt21.Text);
                 var forthValue = double.Parse(txt22.Text);
 
-                var firstComplex = new Complex(firstValue);  //   a
-                var secondComplex = new Complex(secondValue);//   b
-                var thirdComplex = new Complex(thirdValue);  //   c
-                var forthComplex = new Complex(forthValue);  //   d
+                var firstComplex = new Complex(firstValue, secondValue);  //   a
+                var secondComplex = new Complex(thirdValue, forthValue);//   b
+                //var thirdComplex = new Complex(thirdValue);  //   c
+                //var forthComplex = new Complex(forthValue);  //   d
 
-                Complex sumComplex; //сли подставить вместо res1 и закомментить res2, то это не работает, не знаю почему
+                Complex sumComplex; //если подставить вместо res1 и закомментить res2, то это не работает, не знаю почему
                 Complex res1;
                 Complex res2;
 
                 switch (cmbOperation.Text)
                 {
                     case "+":
-                        res1 = firstComplex + thirdComplex; 
-                        res2 = secondComplex + forthComplex;
-                        txtResult.Text = res1.Verbose() + "+" + res2.Verbose() + "i";
+                        res1 = firstComplex + secondComplex; 
+                        //res2 = secondComplex + forthComplex;
+                        txtResult.Text = res1.Verbose() /*+ "+" + res2.Verbose()*/ + "i";
                         break;
                     case "-":
-                        res1 = firstComplex - thirdComplex;
-                        res2 = secondComplex - forthComplex;
-                        txtResult.Text = res1.Verbose() + "+" + res2.Verbose() + "i";
+                        res1 = firstComplex - secondComplex;
+                        //res2 = secondComplex - forthComplex;
+                        txtResult.Text = res1.Verbose() /*+ "+" + res2.Verbose()*/ + "i";
                         break;
                     case "*":
-                        res1 = (firstComplex * thirdComplex) - (secondComplex * forthComplex);
-                        res2 = ( firstComplex * forthComplex )+ (secondComplex * thirdComplex );
-                        txtResult.Text = res1.Verbose() + "+" + res2.Verbose() + "i";
+                        res1 = (firstComplex * secondComplex) - (firstComplex * secondComplex);
+                        //res2 = ( firstComplex * forthComplex )+ (secondComplex * thirdComplex );
+                        txtResult.Text = res1.Verbose() /*+ "+" + res2.Verbose()*/ + "i";
                         break;
                     case "/":
                         res1 = ((firstComplex * thirdComplex) + (secondComplex * forthComplex))/((thirdComplex* thirdComplex) + (forthComplex* forthComplex));
-                        res2 = ((secondComplex * thirdComplex) - (firstComplex * forthComplex))/((thirdComplex*thirdComplex) + (forthComplex*forthComplex));
-                        txtResult.Text = res1.Verbose() + "+" + res2.Verbose() + "i";
+                        //res2 = ((secondComplex * thirdComplex) - (firstComplex * forthComplex))/((thirdComplex*thirdComplex) + (forthComplex*forthComplex));
+                        txtResult.Text = res1.Verbose() /*+ "+" + res2.Verbose()*/ + "i";
                         break;
                     default:
-                        sumComplex = new Complex(0);
+                        sumComplex = new Complex(0,0);
                         break;
                 }
             } catch (FormatException){
