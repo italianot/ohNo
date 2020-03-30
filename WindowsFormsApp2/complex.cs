@@ -19,77 +19,32 @@ namespace WindowsFormsApp2
 
         public string Verbose()
         {
-            return String.Format("{0} {1}", this.real, this.image);
+            return String.Format("{0}+{1}i", this.real, this.image);
         }
 
-        //СЛОЖЕНИЕ
-        /*public static Complex operator +(Complex instance, double number)
-        {
-            return new Complex(instance.real + number);
-        }
-        public static Complex operator +(double number, Complex instance)
-        {
-            return instance + number;
-        }*/
-
-        public static Complex operator +(Complex A, Complex B)
+        public static Complex operator +(Complex A, Complex B)//СУММА
         {
             return new Complex(A.real + B.real, A.image +  B.image);
         }
 
-        //УМНОЖЕНИЕ
-        /*public static Complex operator *(Complex instance, double number)
-        {
-            return new Complex(instance.real * number); 
-        }
-
-        public static Complex operator *(double number, Complex instance)
-        {
-            return instance * number;
-        }*/
-
-        public static Complex operator *(Complex A, Complex B)
+        public static Complex operator *(Complex A, Complex B)//УМНЖЕНИЕ
         {
             return new Complex(A.real * B.real, A.image * B.image);
         }
 
-
-
-
-
-
-
-
-        //ВЫЧИТАНИЕ
-        /*public static Complex operator -(Complex instance, double number)
-        {
-            return new Complex(instance.real - number); 
-        }
-
-        public static Complex operator -(double number, Complex instance)
-        {
-            return instance - number;
-        }*/
-
-        public static Complex operator -(Complex A, Complex B)
+        public static Complex operator -(Complex A, Complex B)//ВЫЧИТАНИЕ
         {
             return new Complex(A.real - B.real, A.image - B.image);
         }
 
-        //ДЕЛЕНИЕ
-        /*public static Complex operator /(Complex instance, double number)
-        {
-            return new Complex(instance.real / number); 
-        }
-
-        public static Complex operator /(double number, Complex instance)
-        {
-            return instance / number;
-        }*/
-
-        public static Complex operator /(Complex A, Complex B)
+        public static Complex operator /(Complex A, Complex B)//ДЕЛЕНИЕ
         {
             return new Complex(A.real / B.real, A.image / B.image);
+        }
+
+        public static Complex operator %(Complex A, Complex B)//СРАВНЕНИЕ
+        {
+            return new Complex(Math.Sqrt(A.real + A.image), Math.Sqrt(B.real + B.image));
         }
     }
 }

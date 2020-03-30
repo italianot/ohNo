@@ -45,7 +45,8 @@
             "+",
             "-",
             "*",
-            "/"});
+            "/",
+            "%"});
             this.cmbOperation.Location = new System.Drawing.Point(68, 92);
             this.cmbOperation.Name = "cmbOperation";
             this.cmbOperation.Size = new System.Drawing.Size(121, 24);
