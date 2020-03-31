@@ -17,10 +17,31 @@ namespace WindowsFormsApp2
             this.image = image;
         }
 
+        public Complex()
+        {
+        }
+
         public string Verbose()
         {
             return String.Format("{0}+{1}i", this.real, this.image);
         }
+
+        public string Ave()
+        {
+            if (this.real > this.image)
+            {
+                return String.Format("z1 больше z2", this.real, this.image);
+            }
+            if (this.real < this.image)
+            {
+                return String.Format("z1 меньше z2", this.real, this.image);
+            }
+            else
+            {
+                return String.Format("z1 равно z2", this.real, this.image);
+            }
+        }
+
 
         public static Complex operator +(Complex A, Complex B)//СУММА
         {
@@ -29,17 +50,26 @@ namespace WindowsFormsApp2
 
         public static Complex operator *(Complex A, Complex B)//УМНЖЕНИЕ
         {
-            return new Complex(A.real * B.real, A.image * B.image);
+            Complex res = new Complex();
+            res.real = A.real * B.real - A.image * B.image;
+            res.image = A.real * B.image + A.image * B.real;
+            return res;
+            //return new Complex(A.real * B.real, A.image * B.image);
         }
 
         public static Complex operator -(Complex A, Complex B)//ВЫЧИТАНИЕ
         {
+             
             return new Complex(A.real - B.real, A.image - B.image);
         }
 
         public static Complex operator /(Complex A, Complex B)//ДЕЛЕНИЕ
         {
-            return new Complex(A.real / B.real, A.image / B.image);
+            Complex res = new Complex();
+            res.real = (A.real * B.real + A.image * B.image) / (Math.Pow(B.real,2) + Math.Pow(B.image, 2));
+            res.image = (A.image * B.real - A.real * B.image) / (Math.Pow(B.real, 2) + Math.Pow(B.image, 2));
+            return res;
+            //return new Complex(A.real / B.real, A.image / B.image);
         }
 
         public static Complex operator %(Complex A, Complex B)//СРАВНЕНИЕ

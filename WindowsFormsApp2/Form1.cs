@@ -30,7 +30,7 @@ namespace WindowsFormsApp2
                 var firstComplex = new Complex(firstValue, secondValue);  //   a
                 var secondComplex = new Complex(thirdValue, forthValue);//   b
                 Complex res1;
-                //Complex res2;
+                
 
                 switch (cmbOperation.Text)
                 {
@@ -50,28 +50,10 @@ namespace WindowsFormsApp2
                         res1 = firstComplex / secondComplex;
                         txtResult.Text = res1.Verbose();
                         break;
-
-
-
-                    /*case "%":
-                        res1 = Convert.ToDouble(firstComplex);
-                        res2 = secondComplex;
-
-                        if (res1 < res2)
-                        {
-                            txtResult.Text = res1.Verbose();
-                        }
-                        if (res1 > res2)
-                        {
-                            txtResult.Text = res1.Verbose();
-                        }
-                        else
-                        {
-                            txtResult.Text = res1.Verbose();
-                        }
-                        break;*/
-
-
+                    case "%":
+                        res1 = firstComplex % secondComplex;
+                        txtResult.Text = res1.Ave();
+                        break;
                     default:
                         res1 = new Complex(0,0);
                         break;
