@@ -72,7 +72,49 @@ namespace WindowsFormsApp2
 
         public static Complex operator %(Complex A, Complex B)//СРАВНЕНИЕ
         {
-            return new Complex(Math.Sqrt(A.real + A.image), Math.Sqrt(B.real + B.image));
+            /*Complex res = new Complex();
+            res.real = Math.Sqrt(A.real * A.real + A.image * A.image);
+            res.image = Math.Sqrt(B.real * B.real + B.image * B.image);
+            bool N = true;
+            if (res.real < res.image || res.real > res.image)
+            {
+                return N;
+            }
+            else {
+                return N;
+            }*/
+            
+            
+
+           return new Complex(Math.Sqrt(A.real + A.image), Math.Sqrt(B.real + B.image));
+        }
+        public static Boolean operator >(Complex A, Complex B)
+        {
+            var a = new Complex(A.real, A.image);
+            var b = new Complex(B.real, B.image);
+            if (a > b)
+            {
+                return true;
+            }
+            
+            else
+            {
+                return false;
+            }
+        }
+        public static Boolean operator <(Complex A, Complex B)
+        {
+
+            var a = new Complex(A.real, A.image);
+            var b = new Complex(B.real, B.image);
+            
+            if (a < b)
+            {
+                return true;
+            }
+            else {
+                return false;
+            }
         }
     }
 }
