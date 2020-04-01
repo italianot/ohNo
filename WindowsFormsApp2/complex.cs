@@ -30,15 +30,15 @@ namespace WindowsFormsApp2
         {
             if (this.real > this.image)
             {
-                return String.Format("z1 больше z2", this.real, this.image);
+                return String.Format("z1 > z2", this.real, this.image);
             }
             if (this.real < this.image)
             {
-                return String.Format("z1 меньше z2", this.real, this.image);
+                return String.Format("z1 < z2", this.real, this.image);
             }
             else
             {
-                return String.Format("z1 равно z2", this.real, this.image);
+                return String.Format("z1 = z2", this.real, this.image);
             }
         }
 
@@ -54,7 +54,6 @@ namespace WindowsFormsApp2
             res.real = A.real * B.real - A.image * B.image;
             res.image = A.real * B.image + A.image * B.real;
             return res;
-            //return new Complex(A.real * B.real, A.image * B.image);
         }
 
         public static Complex operator -(Complex A, Complex B)//ВЫЧИТАНИЕ
@@ -69,7 +68,6 @@ namespace WindowsFormsApp2
             res.real = (A.real * B.real + A.image * B.image) / (Math.Pow(B.real,2) + Math.Pow(B.image, 2));
             res.image = (A.image * B.real - A.real * B.image) / (Math.Pow(B.real, 2) + Math.Pow(B.image, 2));
             return res;
-            //return new Complex(A.real / B.real, A.image / B.image);
         }
 
         public static Complex operator %(Complex A, Complex B)//СРАВНЕНИЕ
