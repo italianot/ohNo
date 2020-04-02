@@ -83,36 +83,39 @@ namespace WindowsFormsApp2
             else {
                 return N;
             }*/
-            
-            
-
-           return new Complex(Math.Sqrt(A.real + A.image), Math.Sqrt(B.real + B.image));
+            return new Complex(Math.Sqrt(A.real + A.image), Math.Sqrt(B.real + B.image));
         }
-        public static Boolean operator >(Complex A, Complex B)
+        public static bool operator >(Complex A, Complex B)
         {
-            var a = new Complex(A.real, A.image);
-            var b = new Complex(B.real, B.image);
-            if (a > b)
+            //var a = new Complex(A.real, A.image);
+            //var b = new Complex(B.real, B.image);
+
+            var AVect = Math.Sqrt(A.real * A.real + A.image * A.image);
+            var BVect = Math.Sqrt(B.real * B.real + B.image * B.image);
+
+            if (AVect > BVect)
             {
                 return true;
             }
-            
             else
             {
                 return false;
             }
         }
-        public static Boolean operator <(Complex A, Complex B)
+        public static bool operator <(Complex A, Complex B)
         {
+            //var a = new Complex(A.real, A.image);
+            //var b = new Complex(B.real, B.image);
 
-            var a = new Complex(A.real, A.image);
-            var b = new Complex(B.real, B.image);
-            
-            if (a < b)
+            var AVect = Math.Sqrt(A.real * A.real + A.image * A.image);
+            var BVect = Math.Sqrt(B.real * B.real + B.image * B.image);
+
+            if (AVect < BVect)
             {
                 return true;
             }
-            else {
+            else 
+            {
                 return false;
             }
         }

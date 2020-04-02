@@ -54,33 +54,38 @@ namespace WindowsFormsApp2
                         res1 = firstComplex % secondComplex;
                         txtResult.Text = res1.Ave();
                         break;
-
-
                     case ">":
-                        if (true) {
-                            txtResult.Text = "z1 больше z2";
+                        var AVect = Math.Sqrt(firstValue * firstValue + secondValue * secondValue);
+                        var BVect = Math.Sqrt(thirdValue * thirdValue + forthValue * forthValue); ;
+                        if (AVect > BVect) {
+                            txtResult.Text = "z1 > z2";
                         }
-                        else {
-                            txtResult.Text = "z1 больше z2";
+                        if (AVect < BVect)
+                        {
+                            txtResult.Text = "z1 < z2";
+                        }
+                        else 
+                        {
+                            txtResult.Text = "z1 = z2";
                         }
                         break;
-
-
-
                     case "<":
-                        if (true)
+                        var A1Vect = Math.Sqrt(firstValue * firstValue + secondValue * secondValue);
+                        var B1Vect = Math.Sqrt(thirdValue * thirdValue + forthValue * forthValue); ;
+                        if (A1Vect < B1Vect)
                         {
-                            txtResult.Text = "z1 меньше z2";
+                            
+                            txtResult.Text = "z1 < z2";
+                        }
+                        if (A1Vect > B1Vect)
+                        {
+                            txtResult.Text = "z1 > z2";
                         }
                         else
                         {
-                            txtResult.Text = "z1 больше z2";
+                            txtResult.Text = "z1 = z2";
                         }
                         break;
-
-
-
-
                     default:
                         res1 = new Complex(0,0);
                         break;
