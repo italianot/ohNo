@@ -29,8 +29,9 @@ namespace WindowsFormsApp2
 
                 var firstComplex = new Complex(firstValue, secondValue);  //   a
                 var secondComplex = new Complex(thirdValue, forthValue);//   b
+                var AVect = Math.Sqrt(firstValue * firstValue + secondValue * secondValue);
+                var BVect = Math.Sqrt(thirdValue * thirdValue + forthValue * forthValue);
                 Complex res1;
-
 
                 switch (cmbOperation.Text)
                 {
@@ -55,8 +56,6 @@ namespace WindowsFormsApp2
                         txtResult.Text = res1.Ave();
                         break;
                     case ">":
-                        var AVect = Math.Sqrt(firstValue * firstValue + secondValue * secondValue);
-                        var BVect = Math.Sqrt(thirdValue * thirdValue + forthValue * forthValue); ;
                         if (AVect > BVect) {
                             txtResult.Text = "z1 > z2";
                         }
@@ -70,14 +69,12 @@ namespace WindowsFormsApp2
                         }
                         break;
                     case "<":
-                        var A1Vect = Math.Sqrt(firstValue * firstValue + secondValue * secondValue);
-                        var B1Vect = Math.Sqrt(thirdValue * thirdValue + forthValue * forthValue); ;
-                        if (A1Vect < B1Vect)
+                        if (AVect < BVect)
                         {
                             
                             txtResult.Text = "z1 < z2";
                         }
-                        if (A1Vect > B1Vect)
+                        if (AVect > BVect)
                         {
                             txtResult.Text = "z1 > z2";
                         }
