@@ -55,34 +55,42 @@ namespace WindowsFormsApp2
                         res1 = firstComplex % secondComplex;
                         txtResult.Text = res1.Ave();
                         break;
+
+
                     case ">":
-                        if (AVect > BVect) {
-                            txtResult.Text = "z1 > z2";
-                        }
-                        if (AVect < BVect)
-                        {
-                            txtResult.Text = "z1 < z2";
-                        }
-                        else 
-                        {
-                            txtResult.Text = "z1 = z2";
-                        }
-                        break;
-                    case "<":
-                        if (AVect < BVect)
-                        {
-                            
-                            txtResult.Text = "z1 < z2";
-                        }
-                        if (AVect > BVect)
-                        {
+                        var tf = AVect > BVect;
+                        if (tf == true) {
                             txtResult.Text = "z1 > z2";
                         }
                         else
                         {
-                            txtResult.Text = "z1 = z2";
+                            txtResult.Text = "z1 < z2";
                         }
                         break;
+                    case "<":
+                        var tf1 = AVect < BVect;
+                        if (tf1 == true)
+                        {
+
+                            txtResult.Text = "z1 < z2";
+                        }
+                        else
+                        {
+                            txtResult.Text = "z1 > z2";
+                        }
+                        break;
+                    case "=":
+                        var tf2 = AVect == BVect;
+                        if (tf2 == true)
+                        {
+                            txtResult.Text = "z1 = z2";
+                        }
+                        else
+                        {
+                            txtResult.Text = "z1 != z2";
+                        }
+                        break;
+
                     default:
                         res1 = new Complex(0,0);
                         break;

@@ -101,5 +101,36 @@ namespace WindowsFormsApp2
                 return false;
             }
         }
+
+        public static bool operator ==(Complex A, Complex B)
+        {
+            var AVect = Math.Sqrt(A.real * A.real + A.image * A.image);
+            var BVect = Math.Sqrt(B.real * B.real + B.image * B.image);
+
+            if (AVect == BVect)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static bool operator !=(Complex A, Complex B)
+        {
+            var AVect = Math.Sqrt(A.real * A.real + A.image * A.image);
+            var BVect = Math.Sqrt(B.real * B.real + B.image * B.image);
+
+            if (AVect != BVect)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
     }
 }
