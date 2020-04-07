@@ -58,25 +58,23 @@ namespace WindowsFormsApp2
 
 
                     case ">":
-                        var tf = AVect > BVect;
-                        if (tf == true) {
+                        if (firstComplex > secondComplex)
+                        {
                             txtResult.Text = "z1 > z2";
                         }
                         else
                         {
-                            txtResult.Text = "z1 < z2";
+                            txtResult.Text = "z1 <= z2";
                         }
                         break;
                     case "<":
-                        var tf1 = AVect < BVect;
-                        if (tf1 == true)
+                        if (firstComplex < secondComplex)
                         {
-
                             txtResult.Text = "z1 < z2";
                         }
                         else
                         {
-                            txtResult.Text = "z1 > z2";
+                            txtResult.Text = "z1 >= z2";
                         }
                         break;
                     case "=":
